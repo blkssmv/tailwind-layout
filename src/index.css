@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@layer base{
+  body{
+    font-family: "DM-Sans", sans-serif;
+  }
+}
+@layer components{
+  .container{
+    @apply max-w-[1440px]
+  }
+}
+#rssBlock{
+  overflow: hidden;
+}
+
+/*remove p*/
+
+
+.marqueeStyle {
+  /* Apply animation to this element */
+  -webkit-animation: scrolling-left 10s linear infinite;
+  animation: scrolling-left 10s linear infinite;
+}
+.marqueeStyle2 {
+  /* Apply animation to this element */
+  -webkit-animation: scrolling-right 10s linear infinite;
+  animation: scrolling-right 10s linear infinite;
+  animation-delay: .3s;
+}
+
+
+/* scrolling-left is continuous/repeatly text */
+@keyframes scrolling-left {
+    0% {transform: translateX(-300%);
+        -webkit-transform: translateX(300%);}
+      100% {transform: translateX(-300%);
+          -webkit-transform: translateX(-300%);}
+}
+@keyframes scrolling-right {
+  0% {transform: translateX(300%);
+      -webkit-transform: translateX(-300%);}
+    100% {transform: translateX(300%);
+        -webkit-transform: translateX(300%);}
+}
+
+
+@-webkit-keyframes scrolling-left {
+    0% {-webkit-transform: translateX(-300%);}
+      100% {-webkit-transform: translateX(-300%);}
+}
+@-webkit-keyframes scrolling-right {
+  0% {-webkit-transform: translateX(300%);}
+    100% {-webkit-transform: translateX(300%);}
+}
+
+.visuallyHidden {
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0; 
+}
+.hamburger {
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.hamburger .bar {
+  padding: 0;
+  width: 30px;
+  height: 4px;
+  background-color: maroon;
+  display: block;
+  border-radius: 4px;
+  transition: all 0.4s ease-in-out;
+  position: absolute; 
+}
+
+.bar1 {
+  top: 0;
+}
+
+.bar2,
+.bar3 {
+  top: 13.5px;
+}
+
+.bar3 {
+  right: 0;
+}
+
+.bar4 {
+  bottom: 0;
+}
+.hamburger4 .bar4 {
+    top: 13.5px;
+}
+
+.hamburger4 .bar5 {
+    bottom: 0px;
+}
+
+.hamburger4 .bar {
+    transition: all 0.4s ease-in-out, transform 0.4s ease-in-out 0.4s;
+}
+
+.hamburger4 .bar2 {
+    width: 1px;
+    transform: rotate(90deg);
+    left: 13.5px;
+}
+
+.hamburger4 .bar3 {
+    width: 1px;
+    left: 13.5px;
+    
+}
+
+.checkbox4:checked + label > .hamburger4 > .bar1{
+    top: 13.5px;
+    background-color: transparent;
+}
+
+.checkbox4:checked + label > .hamburger4 > .bar2{
+    left: 0px;
+    width: 30px;
+    transform: rotate(45deg);
+}
+
+.checkbox4:checked + label > .hamburger4 > .bar3{
+    left: 0;
+    width: 30px;
+    transform: rotate(-45deg);
+}
+
+.checkbox4:checked + label > .hamburger4 > .bar4{
+    background-color: transparent;
+}
+
+.checkbox4:checked + label > .hamburger4 > .bar5{
+    bottom: 13.5px;
+    background-color: transparent; 
+}
